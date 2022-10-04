@@ -1,5 +1,5 @@
-// how we create interface and constructor in typeScript
-
+// how we create interface and contructor in typeScript
+// classes contructor and interface 
 
 interface Person{
     name:string;
@@ -24,3 +24,70 @@ ShowMe(){
 console.log("hey")
 }
 }
+
+
+
+/ Decorators
+
+function CanFly(constructorFunction:Function){
+    console.log("CAN I FLY INVOKED");
+    constructorFunction.prototype.fly=true;
+}
+
+
+
+
+
+@CanFly
+
+class Person{
+    private name:string;
+
+    constructor(name:string){
+        console.log("### constructor called ###");
+        this.name=name;
+    }
+}
+console.log("### creating 1st ###");
+
+let satish:Person=new Person("satish");
+console.log(satish);
+console.log(`CAN I FLY ${satish['fly']}`)
+
+
+console.log("### creating 2nd ###");
+
+let ashish:Person=new Person("ashish");
+console.log(ashish);
+console.log(`CAN I FLY ${ashish['fly']}`)
+
+
+
+
+function CanCry (constructorFunction:Function){
+    console.log("CAN I FLY INVOKED");
+    constructorFunction.prototype.Cry=true;
+    }
+    
+    
+    
+    @CanCry
+    class Person{
+        private name:string;
+    
+        constructor(name:string){
+            console.log(" ###constructor called ###");
+            this.name=name;
+        }
+    
+    }
+         console.log(" ### creating first ###");
+         let joy :Person=new Person("joy");
+         console.log(joy);
+         console.log(`CAN I Cry ${joy['Cry']}`)
+    
+    
+         console.log("###creating first###");
+         let happy :Person=new Person("happy");
+         console.log(happy);
+         console.log(`CAN I Cry ${happy['Cry']}`)
