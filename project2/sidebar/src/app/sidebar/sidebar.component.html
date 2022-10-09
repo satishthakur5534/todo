@@ -1,0 +1,27 @@
+<h1>
+    THKEE</h1>
+<div class="header">
+    <h1>Course</h1>
+</div>
+<button class="sidebar-open btnsidebar" (click)="sidebarShow = !sidebarShow">
+    Open Sidebar
+  </button>
+<div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
+    <button class="sidebar-close" (click)="sidebarShow = !sidebarShow">x</button>
+    <div class="sidebar-content">
+        <h2 class="set-align"></h2>
+        <div class="set-sidebar-text" routerLink="/overview">Overview</div>
+        <div class="set-sidebar-text">E-commerce</div>
+        <div class="set-sidebar-text">Marketing</div>
+        <div class="dropbtn">Price Management
+            <select id="dropdown">
+            <option value="to review">To review</option>
+            <option value="Publised">Publised</option>
+            <option value="Rejected">Rejected</option>
+
+            </select>
+        </div>
+        <div class="set-sidebar-text">Report</div>
+        <div class="set-sidebar-text">Users</div>
+    </div>
+</div>
